@@ -1,0 +1,318 @@
+/*
+======================================================
+Arquivo: css/blog.css
+Regras específicas para o layout da página do Blog (blog.html)
+======================================================
+*/
+
+/* Importa as variáveis globais do style.css se necessário (opcional) */
+/* Se as variáveis :root estiverem no style.css, este bloco não é necessário */
+/*
+:root {
+    --primary-color: #007bff;
+    --accent-color: #ff6f61;
+    --text-color: #333;
+    --light-bg: #f4f4f9;
+    --white: #fff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+*/
+
+.pagina-interna {
+    padding-top: 50px; /* Espaçamento do topo para o título */
+    padding-bottom: 80px;
+}
+
+.pagina-interna h1 {
+    font-size: 3em;
+    color: var(--primary-color, #007bff); /* Usa fallback se variável não estiver definida */
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* --------------------------------- */
+/* 1. Destaque do Blog (Flexbox) */
+/* --------------------------------- */
+.destaque-blog {
+    display: flex; /* Usa Flexbox para dispor imagem e conteúdo lado a lado */
+    background-color: var(--white, #fff);
+    border-radius: 10px;
+    overflow: hidden; /* Garante que a imagem respeite o border-radius */
+    box-shadow: var(--shadow, 0 4px 6px rgba(0, 0, 0, 0.1));
+    margin-bottom: 60px;
+    min-height: 400px;
+}
+
+.destaque-imagem {
+    flex: 2; /* Ocupa 2 partes do espaço */
+    position: relative;
+    overflow: hidden;
+}
+
+.destaque-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    transition: transform 0.4s ease;
+}
+
+.destaque-blog:hover .destaque-imagem img {
+    transform: scale(1.03);
+}
+
+.destaque-conteudo {
+    flex: 1; /* Ocupa 1 parte do espaço */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente o conteúdo */
+}
+
+.destaque-categoria {
+    display: inline-block;
+    background-color: var(--accent-color, #ff6f61);
+    color: var(--white, #fff);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.destaque-conteudo h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: var(--text-color, #333);
+}
+
+.destaque-data {
+    color: #999;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+/* --------------------------------- */
+/* 2. Categorias (Flexbox) */
+/* --------------------------------- */
+.categorias-blog {
+    display: flex; /* Alinha os botões horizontalmente */
+    flex-wrap: wrap; /* Quebra linha se não houver espaço */
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.categoria-btn {
+    padding: 10px 20px;
+    border: 1px solid var(--primary-color, #007bff);
+    background-color: var(--white, #fff);
+    color: var(--primary-color, #007bff);
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.categoria-btn:hover {
+    background-color: var(--light-bg, #f4f4f9);
+}
+
+.categoria-btn.active {
+    background-color: var(--primary-color, #007bff);
+    color: var(--white, #fff);
+    box-shadow: 0 3px 6px rgba(0, 123, 255, 0.3);
+}
+
+/* --------------------------------- */
+/* 3. Grid de Artigos (Grid) */
+/* --------------------------------- */
+.blog-grid {
+    display: grid; /* Usa Grid para criar o layout de múltiplos artigos */
+    /* Cria 3 colunas de tamanho igual */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; /* Espaço entre os cartões */
+    margin-bottom: 80px;
+}
+
+.blog-card {
+    background-color: var(--white, #fff);
+    border-radius: 8px;
+    box-shadow: var(--shadow, 0 4px 6px rgba(0, 0, 0, 0.1));
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.blog-imagem {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.blog-card:hover .blog-imagem img {
+    transform: scale(1.05);
+}
+
+.blog-imagem .blog-categoria {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--white, #fff);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75em;
+    font-weight: bold;
+    text-transform: uppercase;
+    backdrop-filter: blur(2px);
+}
+
+.blog-conteudo {
+    padding: 20px;
+}
+
+.blog-conteudo h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.blog-data {
+    color: #999;
+    font-size: 0.85em;
+    margin-bottom: 15px;
+}
+
+.blog-link {
+    color: var(--primary-color, #007bff);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex; /* Usa Flexbox para alinhar texto e ícone */
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.blog-link:hover {
+    color: var(--accent-color, #ff6f61);
+}
+
+/* --------------------------------- */
+/* 4. Newsletter (Flexbox) */
+/* --------------------------------- */
+.newsletter-container {
+    background: linear-gradient(135deg, var(--primary-color, #007bff), #0056b3);
+    color: var(--white, #fff);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-content h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.newsletter-content p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+.newsletter-form {
+    display: flex; /* Alinha input e botão horizontalmente */
+    justify-content: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-form input[type="email"] {
+    flex-grow: 1; /* Permite que o input preencha o espaço */
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.newsletter-form .btn {
+    /* O estilo padrão do .btn (se estiver no style.css) será usado, mas podemos sobrescrever cores específicas aqui */
+    background-color: var(--accent-color, #ff6f61);
+    color: var(--white, #fff);
+    font-weight: bold;
+}
+
+.newsletter-form .btn:hover {
+    background-color: #e55c50; 
+}
+
+
+/* --------------------------------- */
+/* 5. Responsividade */
+/* --------------------------------- */
+@media (max-width: 992px) {
+    /* Tablet e Telas menores */
+    .destaque-blog {
+        /* Muda o Flexbox para empilhar verticalmente */
+        flex-direction: column; 
+        min-height: auto;
+    }
+    
+    .destaque-imagem {
+        height: 300px; /* Altura fixa para imagem no tablet */
+    }
+
+    .blog-grid {
+        /* Em telas menores, o auto-fit já ajustará para 2 ou 1 coluna automaticamente
+           graças ao minmax(300px, 1fr) */
+    }
+}
+
+@media (max-width: 600px) {
+    /* Smartphone */
+    .destaque-conteudo {
+        padding: 20px;
+    }
+    
+    .destaque-conteudo h2 {
+        font-size: 1.5em;
+    }
+    
+    .newsletter-form {
+        /* Empilha input e botão para melhor visualização em telas pequenas */
+        flex-direction: column;
+    }
+    
+    .newsletter-form .btn {
+        width: 100%; /* Botão preenche a largura total */
+    }
+}
+
+/* Garantia de que a grid fique em uma coluna no menor dispositivo */
+@media (max-width: 450px) {
+    .blog-grid {
+        grid-template-columns: 1fr; /* Força 1 coluna */
+    }
+}

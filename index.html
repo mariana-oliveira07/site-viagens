@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viagens & Aventuras - Descubra o Mundo</title>
+
+    <meta name="description" content="Descubra destinos incríveis, promoções imperdíveis e planeje viagens inesquecíveis com a Viagens & Aventuras.">
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-plane"></i> Viagens<span>&</span>Aventuras
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav" aria-label="Menu principal">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="planejamento.html">Planejamento</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="slider-container" aria-label="Carrossel de Destaques de Viagem">
+            <div class="slider">
+
+                <article class="slide active" style="
+                    background-image:
+                    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                    url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2074&q=80');
+                ">
+                    <div class="slide-content">
+                        <h2>Descubra Novos Horizontes</h2>
+                        <p>Explore os destinos mais incríveis do mundo com as melhores condições.</p>
+                        <a href="destinos.html" class="btn">Ver Destinos</a>
+                    </div>
+                </article>
+
+                <article class="slide" style="
+                    background-image:
+                    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2073&q=80');
+                ">
+                    <div class="slide-content">
+                        <h2>Praias Paradisíacas</h2>
+                        <p>Relaxe nas mais belas praias do Caribe, Mediterrâneo e Ásia.</p>
+                        <a href="destinos.html" class="btn">Ofertas Especiais</a>
+                    </div>
+                </article>
+
+                <article class="slide" style="
+                    background-image:
+                    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                    url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2070&q=80');
+                ">
+                    <div class="slide-content">
+                        <h2>Aventuras Inesquecíveis</h2>
+                        <p>Experiências únicas em montanhas, florestas e desertos.</p>
+                        <a href="contato.html" class="btn">Planejar Viagem</a>
+                    </div>
+                </article>
+            </div>
+
+            <button class="slider-btn prev" id="prevBtn" aria-label="Slide anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn next" id="nextBtn" aria-label="Próximo slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <div class="slider-nav" id="sliderNav">
+                <button class="slider-dot active" aria-label="Ir para slide 1"></button>
+                <button class="slider-dot" aria-label="Ir para slide 2"></button>
+                <button class="slider-dot" aria-label="Ir para slide 3"></button>
+            </div>
+        </section>
+
+        <section class="destinos">
+            <div class="container">
+                <h2 class="section-title">Destinos Populares</h2>
+
+                <div class="destinos-grid">
+
+                    <article class="destino-card">
+                        <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=2068&q=80"
+                             alt="Vista de Paris com a Torre Eiffel ao pôr do sol" class="destino-img">
+                        <div class="destino-content">
+                            <h3>Paris, França</h3>
+                            <p>A cidade do amor, com cultura, história e gastronomia única.</p>
+                            <div class="destino-price">€ 1.250</div>
+                            <a href="destinos.html" class="btn btn-accent">Saber Mais</a>
+                        </div>
+                    </article>
+
+                    <article class="destino-card">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=2070&q=80"
+                             alt="Praias tropicais de Bali com coqueiros e mar azul" class="destino-img">
+                        <div class="destino-content">
+                            <h3>Bali, Indonésia</h3>
+                            <p>Paraíso tropical com praias, templos e natureza exuberante.</p>
+                            <div class="destino-price">€ 980</div>
+                            <a href="destinos.html" class="btn btn-accent">Saber Mais</a>
+                        </div>
+                    </article>
+
+                    <article class="destino-card">
+                        <img src="https://images.unsplash.com/photo-1519677100203-9f2e5c86d5b7?auto=format&fit=crop&w=2070&q=80"
+                             alt="Nova York à noite com a Times Square iluminada" class="destino-img">
+                        <div class="destino-content">
+                            <h3>Nova York, EUA</h3>
+                            <p>A cidade que nunca dorme, cheia de arte, cultura e energia.</p>
+                            <div class="destino-price">€ 1.450</div>
+                            <a href="destinos.html" class="btn btn-accent">Saber Mais</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="promocoes">
+            <div class="container">
+                <h2 class="section-title">Promoções Imperdíveis</h2>
+
+                <div class="promocoes-container">
+
+                    <article class="promo-card">
+                        <div class="promo-header">Verão 2025</div>
+                        <div class="promo-body">
+                            <h3>Pacote Caribe</h3>
+                            <ul>
+                                <li>7 noites em resort all-inclusive</li>
+                                <li>Voo direto incluído</li>
+                                <li>Transfer aeroporto-hotel</li>
+                                <li>Passeio de barco exclusivo</li>
+                            </ul>
+                            <div class="destino-price">
+                                € 1.199 <span class="old-price">€ 1.599</span>
+                            </div>
+                            <a href="destinos.html" class="btn">Reservar Agora</a>
+                        </div>
+                    </article>
+
+                    <article class="promo-card">
+                        <div class="promo-header">Última Hora</div>
+                        <div class="promo-body">
+                            <h3>Europa Clássica</h3>
+                            <ul>
+                                <li>Roma, Paris e Londres</li>
+                                <li>10 noites com café da manhã</li>
+                                <li>Transporte entre cidades</li>
+                                <li>Guias locais inclusos</li>
+                            </ul>
+                            <div class="destino-price">
+                                € 2.250 <span class="old-price">€ 2.850</span>
+                            </div>
+                            <a href="destinos.html" class="btn">Reservar Agora</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="servicos">
+            <div class="container">
+                <h2 class="section-title">Nossos Serviços</h2>
+
+                <div class="servicos-grid">
+                    <article class="servico-card">
+                        <i class="fas fa-hotel"></i>
+                        <h3>Hospedagem</h3>
+                        <p>Reservamos hotéis, resorts e pousadas selecionados.</p>
+                    </article>
+
+                    <article class="servico-card">
+                        <i class="fas fa-plane"></i>
+                        <h3>Passagens Aéreas</h3>
+                        <p>Encontramos as melhores tarifas e rotas para você.</p>
+                    </article>
+
+                    <article class="servico-card">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>Roteiros Personalizados</h3>
+                        <p>Montamos itinerários completos conforme seu perfil.</p>
+                    </article>
+
+                    <article class="servico-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>Suporte 24h</h3>
+                        <p>Atendimento durante toda sua viagem.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+
+                <div class="footer-col">
+                    <h3>Viagens & Aventuras</h3>
+                    <p>Experiências inesquecíveis há mais de 15 anos. Sua próxima jornada começa aqui.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="planejamento.html">Planejamento</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua das Viagens, 123 - Centro, Cidade Exemplo</p>
+                    <p><i class="fas fa-phone"></i> (11) 9999-8888</p>
+                    <p><i class="fas fa-envelope"></i> contato@viagensaventuras.com</p>
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 Viagens & Aventuras • Todos os direitos reservados.</p>
+                <p>Trabalho acadêmico para demonstração de HTML, CSS e JavaScript.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

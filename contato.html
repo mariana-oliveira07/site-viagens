@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Viajens & Aventuras</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho com menu de navegação -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-plane"></i>
+                Viajens<span>&</span>Aventuras
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="planejamento.html">Planejamen</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Conteúdo da página de contato -->
+    <main class="pagina-interna">
+        <div class="container">
+            <h1>Entre em Contato</h1>
+            <p class="subtitle">Tem dúvidas ou precisa de um orçamento personalizado? Preencha o formulário abaixo e nossa equipe entrará em contato em até 24 horas.</p>
+            
+            <div class="contato-container">
+                <!-- Formulário de contato -->
+                <div class="form-container">
+                    <form id="contactForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="nome">Nome Completo *</label>
+                                <input type="text" id="nome" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail *</label>
+                                <input type="email" id="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="telefone">Telefone *</label>
+                                <input type="tel" id="telefone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="destino">Destino de Interesse</label>
+                                <select id="destino">
+                                    <option value="">Selecione um destino</option>
+                                    <option value="paris">Paris, França</option>
+                                    <option value="bali">Bali, Indonésia</option>
+                                    <option value="nova-york">Nova York, EUA</option>
+                                    <option value="tailandia">Tailândia</option>
+                                    <option value="grecia">Grécia</option>
+                                    <option value="japao">Japão</option>
+                                    <option value="africa-sul">África do Sul</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="data-viagem">Data Prevista para Viagem</label>
+                            <input type="date" id="data-viagem">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem *</label>
+                            <textarea id="mensagem" rows="5" placeholder="Descreva sua viagem dos sonhos..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-submit">Enviar Mensagem</button>
+                    </form>
+                </div>
+                
+                <!-- Informações de contato -->
+                <div class="info-container">
+                    <div class="info-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> Endereço</h3>
+                        <p>Rua das Viagens, 123<br>Centro, São Paulo - SP<br>CEP: 01234-567</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3><i class="fas fa-phone"></i> Telefones</h3>
+                        <p>(11) 9999-8888<br>(11) 7777-6666<br>WhatsApp: (11) 99999-8888</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3><i class="fas fa-envelope"></i> E-mail</h3>
+                        <p>contato@viajensaventuras.com<br>orcamentos@viajensaventuras.com<br>suporte@viajensaventuras.com</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3><i class="fas fa-clock"></i> Horário de Atendimento</h3>
+                        <p>Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 14h<br>Domingo: Fechado</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mapa -->
+            <div class="mapa-container">
+                <h2>Onde Estamos</h2>
+                <div class="mapa">
+                    <!-- Mapa simulado -->
+                    <div class="mapa-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p>Mapa da Localização</p>
+                        <p>Rua das Viagens, 123 - Centro, São Paulo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Viajens & Aventuras</h3>
+                    <p>Especialistas em criar experiências de viagem inesquecíveis há mais de 15 anos.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="planejamento.html">Planejamento</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua das Viagens, 123</p>
+                    <p><i class="fas fa-phone"></i> (11) 9999-8888</p>
+                    <p><i class="fas fa-envelope"></i> contato@viajensaventuras.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Viajens & Aventuras. Todos os direitos reservados.</p>
+                <p>Trabalho acadêmico para demonstração de HTML, CSS e JavaScript.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

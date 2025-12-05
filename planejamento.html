@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejamento em Grupo - Viagens & Aventuras</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- SEO -->
+    <meta name="description" content="Planeje viagens em grupo com facilidade. Crie grupos, divida custos, personalize pacotes e acompanhe o progresso de cada viagem.">
+</head>
+
+<body>
+    
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container header-container">
+
+            <a href="index.html" class="logo">
+                <i class="fas fa-plane"></i>
+                Viagens<span>&</span>Aventuras
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav" aria-label="Menu principal">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="planejamento.html">Planejamento</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="pagina-interna">
+        <div class="container">
+
+            <h1>Planejamento em Grupo</h1>
+            <p class="subtitle">
+                Organize sua viagem com amigos e familiares de forma colaborativa. Crie grupos, divida custos e personalize pacotes com facilidade.
+            </p>
+
+            <!-- Criar Grupo -->
+            <section class="criar-grupo">
+                <div class="criar-grupo-container">
+
+                    <div class="criar-grupo-content">
+                        <h2>Crie seu Grupo de Viagem</h2>
+                        <p>Convide amigos, defina datas, destinos e orçamento. Planejamento colaborativo fácil e rápido.</p>
+
+                        <div class="grupo-beneficios">
+                            <div class="beneficio">
+                                <i class="fas fa-users"></i>
+                                <h4>Convite Fácil</h4>
+                                <p>Envie convites por e-mail ou link compartilhável</p>
+                            </div>
+
+                            <div class="beneficio">
+                                <i class="fas fa-calculator"></i>
+                                <h4>Divisão de Custos</h4>
+                                <p>Despesas calculadas automaticamente</p>
+                            </div>
+
+                            <div class="beneficio">
+                                <i class="fas fa-calendar-check"></i>
+                                <h4>Agenda Compartilhada</h4>
+                                <p>Defina atividades e horários colaborativamente</p>
+                            </div>
+
+                            <div class="beneficio">
+                                <i class="fas fa-comments"></i>
+                                <h4>Chat Integrado</h4>
+                                <p>Converse com o grupo em tempo real</p>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-accent" id="criarGrupoBtn">Criar Novo Grupo</button>
+                    </div>
+
+                    <div class="criar-grupo-imagem">
+                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2030&q=80"
+                             alt="Amigos planejando viagem">
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Modal Criar Grupo -->
+            <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+
+                <div class="modal-container">
+
+                    <div class="modal-header">
+                        <h2>Criar Novo Grupo de Viagem</h2>
+                        <button class="modal-close" id="modalClose" aria-label="Fechar janela">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="formGrupoViagem">
+
+                            <div class="form-group">
+                                <label for="nomeGrupo">Nome do Grupo *</label>
+                                <input type="text" id="nomeGrupo" placeholder="Ex: Viagem dos Formandos" required>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="destinoGrupo">Destino</label>
+                                    <select id="destinoGrupo">
+                                        <option value="">Escolha uma opção</option>
+                                        <option value="praia">Praia</option>
+                                        <option value="montanha">Montanha</option>
+                                        <option value="cidade">Urbano</option>
+                                        <option value="aventura">Aventura</option>
+                                        <option value="cultural">Cultural</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="qtdPessoas">Quantidade de Pessoas *</label>
+                                    <input type="number" id="qtdPessoas" min="2" max="50" required>
+                                </div>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="dataInicio">Data de Início *</label>
+                                    <input type="date" id="dataInicio" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="dataFim">Data de Término *</label>
+                                    <input type="date" id="dataFim" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="orcamentoGrupo">Orçamento Total (R$)</label>
+                                <input type="number" id="orcamentoGrupo" min="0" placeholder="Ex: 4500">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="descricaoGrupo">Descrição da Viagem</label>
+                                <textarea id="descricaoGrupo" rows="3" placeholder="Atividades, expectativas, objetivos..."></textarea>
+                            </div>
+
+                            <div class="modal-actions">
+                                <button type="button" class="btn btn-secondary" id="cancelarGrupo">Cancelar</button>
+                                <button type="submit" class="btn btn-accent">Criar Grupo</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Pacotes Personalizados -->
+            <section class="pacotes-personalizados">
+                <h2 class="section-title">Pacotes Personalizados para Grupos</h2>
+                <p class="subtitle">Opções especiais para cada tipo de grupo</p>
+
+                <div class="pacotes-grid">
+
+                    <!-- Amigos -->
+                    <article class="pacote-card">
+                        <div class="pacote-header">
+                            <h3>Amigos</h3>
+                            <div class="pacote-preco">A partir de R$ 1.200 <span>/pessoa</span></div>
+                        </div>
+
+                        <div class="pacote-body">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Hospedagem econômica</li>
+                                <li><i class="fas fa-check"></i> Atividades radicais</li>
+                                <li><i class="fas fa-check"></i> Vida noturna</li>
+                                <li><i class="fas fa-check"></i> Transporte entre atrações</li>
+                                <li><i class="fas fa-check"></i> Guia especializado</li>
+                            </ul>
+
+                            <div class="pacote-detalhes">
+                                <span><i class="fas fa-user-friends"></i> 4–12 pessoas</span>
+                                <span><i class="fas fa-clock"></i> 5–7 dias</span>
+                            </div>
+
+                            <button class="btn btn-pacote" data-pacote="amigos">Personalizar Pacote</button>
+                        </div>
+                    </article>
+
+                    <!-- Família -->
+                    <article class="pacote-card destaque">
+                        <div class="pacote-header">
+                            <h3>Família</h3>
+                            <div class="pacote-preco">A partir de R$ 2.800 <span>/família</span></div>
+                        </div>
+
+                        <div class="pacote-body">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Hospedagem familiar</li>
+                                <li><i class="fas fa-check"></i> Atividades infantis</li>
+                                <li><i class="fas fa-check"></i> Refeições inclusas</li>
+                                <li><i class="fas fa-check"></i> Babá (opcional)</li>
+                                <li><i class="fas fa-check"></i> Descontos especiais</li>
+                            </ul>
+
+                            <div class="pacote-detalhes">
+                                <span><i class="fas fa-user-friends"></i> 2–6 pessoas</span>
+                                <span><i class="fas fa-clock"></i> 7–10 dias</span>
+                            </div>
+
+                            <button class="btn btn-pacote" data-pacote="familia">Personalizar Pacote</button>
+                        </div>
+                    </article>
+
+                    <!-- Casais -->
+                    <article class="pacote-card">
+                        <div class="pacote-header">
+                            <h3>Casais</h3>
+                            <div class="pacote-preco">A partir de R$ 1.800 <span>/casal</span></div>
+                        </div>
+
+                        <div class="pacote-body">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Suíte romântica</li>
+                                <li><i class="fas fa-check"></i> Jantar especial</li>
+                                <li><i class="fas fa-check"></i> Passeios privativos</li>
+                                <li><i class="fas fa-check"></i> Spa opcional</li>
+                                <li><i class="fas fa-check"></i> Experiências exclusivas</li>
+                            </ul>
+
+                            <div class="pacote-detalhes">
+                                <span><i class="fas fa-user-friends"></i> 2 pessoas</span>
+                                <span><i class="fas fa-clock"></i> 4–8 dias</span>
+                            </div>
+
+                            <button class="btn btn-pacote" data-pacote="casais">Personalizar Pacote</button>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Divisão de Custos -->
+            <section class="divisao-custos">
+                <h2 class="section-title">Calculadora de Divisão de Custos</h2>
+                <p class="subtitle">Descubra quanto cada pessoa deve contribuir</p>
+
+                <div class="calculadora-container">
+
+                    <div class="calculadora-inputs">
+                        <div class="form-group">
+                            <label for="totalCustos">Total dos Custos (R$) *</label>
+                            <input type="number" id="totalCustos" min="0" value="5000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="numPessoas">Número de Pessoas *</label>
+                            <input type="number" id="numPessoas" min="2" max="50" value="4">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="despesasExtras">Despesas Extras por Pessoa (R$)</label>
+                            <input type="number" id="despesasExtras" min="0" value="300">
+                            <small>Gastos pessoais opcionais</small>
+                        </div>
+
+                        <button class="btn btn-accent" id="calcularCustos">Calcular Divisão</button>
+                    </div>
+
+                    <div class="calculadora-resultado">
+                        <div class="resultado-card">
+
+                            <h3>Resultado da Divisão</h3>
+
+                            <div class="resultado-item">
+                                <span>Valor por pessoa:</span>
+                                <span class="valor" id="valorPorPessoa">R$ 0,00</span>
+                            </div>
+
+                            <div class="resultado-item">
+                                <span>Total com extras:</span>
+                                <span class="valor" id="totalComExtras">R$ 0,00</span>
+                            </div>
+
+                            <div class="resultado-item">
+                                <span>Valor total do grupo:</span>
+                                <span class="valor-total" id="valorTotalGrupo">R$ 0,00</span>
+                            </div>
+
+                            <div class="dicas-divisao">
+                                <h4>Dicas para Dividir Gastos:</h4>
+                                <ul>
+                                    <li>Defina o que será dividido antes da viagem</li>
+                                    <li>Utilize aplicativos como Splitwise</li>
+                                    <li>Escolha um responsável pelo caixa</li>
+                                    <li>Documente despesas com fotos de recibos</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Grupos Ativos -->
+            <section class="grupos-ativos">
+                <h2 class="section-title">Grupos em Planejamento</h2>
+                <p class="subtitle">Veja grupos reais planejando suas viagens</p>
+
+                <div class="grupos-grid">
+
+                    <article class="grupo-card">
+                        <div class="grupo-info">
+                            <h3>Formandos de Engenharia 2024</h3>
+
+                            <div class="grupo-detalhes">
+                                <span><i class="fas fa-map-marker-alt"></i> Florianópolis, SC</span>
+                                <span><i class="fas fa-calendar"></i> Jan 2024</span>
+                                <span><i class="fas fa-users"></i> 12 pessoas</span>
+                            </div>
+
+                            <p>Viagem de celebração com festas e praias durante uma semana.</p>
+
+                            <div class="grupo-progresso">
+                                <div class="progresso-bar">
+                                    <div class="progresso-fill" style="width: 75%"></div>
+                                </div>
+                                <span>75% planejado</span>
+                            </div>
+                        </div>
+
+                        <div class="grupo-acoes">
+                            <button class="btn btn-small">Ver Detalhes</button>
+                        </div>
+
+                    </article>
+
+                    <article class="grupo-card">
+                        <div class="grupo-info">
+                            <h3>Família Silva — Encontro Anual</h3>
+
+                            <div class="grupo-detalhes">
+                                <span><i class="fas fa-map-marker-alt"></i> Campos do Jordão, SP</span>
+                                <span><i class="fas fa-calendar"></i> Jul 2024</span>
+                                <span><i class="fas fa-users"></i> 8 pessoas</span>
+                            </div>
+
+                            <p>Semana especial em família com atividades para adultos e crianças.</p>
+
+                            <div class="grupo-progresso">
+                                <div class="progresso-bar">
+                                    <div class="progresso-fill" style="width: 60%"></div>
+                                </div>
+                                <span>60% planejado</span>
+                            </div>
+
+                        </div>
+
+                        <div class="grupo-acoes">
+                            <button class="btn btn-small">Ver Detalhes</button>
+                        </div>
+                    </article>
+
+                    <article class="grupo-card">
+                        <div class="grupo-info">
+
+                            <h3>Amigos do Futebol — Final Libertadores</h3>
+
+                            <div class="grupo-detalhes">
+                                <span><i class="fas fa-map-marker-alt"></i> Buenos Aires, AR</span>
+                                <span><i class="fas fa-calendar"></i> Nov 2024</span>
+                                <span><i class="fas fa-users"></i> 6 pessoas</span>
+                            </div>
+
+                            <p>Viagem esportiva com passeios e dia da final da Libertadores.</p>
+
+                            <div class="grupo-progresso">
+                                <div class="progresso-bar">
+                                    <div class="progresso-fill" style="width: 45%"></div>
+                                </div>
+                                <span>45% planejado</span>
+                            </div>
+                        </div>
+
+                        <div class="grupo-acoes">
+                            <button class="btn btn-small">Ver Detalhes</button>
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <div class="cta-grupos">
+                    <h3>Comece agora seu planejamento!</h3>
+                    <p>Crie seu grupo e compartilhe ideias com outras pessoas.</p>
+                    <button class="btn btn-accent" id="criarGrupoBtn2">Criar Grupo</button>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-container">
+
+                <div class="footer-col">
+                    <h3>Viagens & Aventuras</h3>
+                    <p>Experiências inesquecíveis há mais de 15 anos.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="planejamento.html">Planejamento</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua das Viagens, 123</p>
+                    <p><i class="fas fa-phone"></i> (11) 9999-8888</p>
+                    <p><i class="fas fa-envelope"></i> contato@viagensaventuras.com</p>
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 Viagens & Aventuras — Todos os direitos reservados.</p>
+                <p>Trabalho acadêmico demonstrativo de HTML, CSS e JavaScript.</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/planejamento.js"></script>
+
+</body>
+</html>

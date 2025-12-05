@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinos - Viajens & Aventuras</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho com menu de navegação -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-plane"></i>
+                Viajens<span>&</span>Aventuras
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="planejamento.html">Planejamen</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Conteúdo da página de destinos -->
+    <main class="pagina-interna">
+        <div class="container">
+            <h1>Nossos Destinos</h1>
+            <p class="subtitle">Explore nossos destinos mais populares e planeje a viagem dos seus sonhos. Oferecemos pacotes completos para todos os tipos de viajantes.</p>
+            
+            <!-- Filtros de destinos -->
+            <div class="filtros-container">
+                <button class="filtro-btn active" data-filter="todos">Todos</button>
+                <button class="filtro-btn" data-filter="europa">Europa</button>
+                <button class="filtro-btn" data-filter="america">América</button>
+                <button class="filtro-btn" data-filter="asia">Ásia</button>
+                <button class="filtro-btn" data-filter="africa">África</button>
+            </div>
+            
+            <!-- Grid de destinos -->
+            <div class="destinos-grid">
+                <!-- Destino 1 -->
+                <div class="destino-card" data-categoria="europa">
+                    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&auto=format&fit=crop&w=2068&q=80" alt="Paris" class="destino-img">
+                    <div class="destino-content">
+                        <div class="destino-categoria">Europa</div>
+                        <h3>Paris, França</h3>
+                        <p>A cidade do amor, repleta de cultura, história e gastronomia inigualável.</p>
+                        <div class="destino-info">
+                            <span><i class="fas fa-calendar"></i> 7 dias</span>
+                            <span><i class="fas fa-user"></i> 2 pessoas</span>
+                        </div>
+                        <div class="destino-price">€ 1.250</div>
+                        <a href="contato.html" class="btn btn-accent">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <!-- Destino 2 -->
+                <div class="destino-card" data-categoria="asia">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Bali" class="destino-img">
+                    <div class="destino-content">
+                        <div class="destino-categoria">Ásia</div>
+                        <h3>Bali, Indonésia</h3>
+                        <p>Paraíso tropical com praias deslumbrantes, templos e cultura rica.</p>
+                        <div class="destino-info">
+                            <span><i class="fas fa-calendar"></i> 10 dias</span>
+                            <span><i class="fas fa-user"></i> 2 pessoas</span>
+                        </div>
+                        <div class="destino-price">€ 980</div>
+                        <a href="contato.html" class="btn btn-accent">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <!-- Destino 3 -->
+                <div class="destino-card" data-categoria="america">
+                    <img src="https://images.unsplash.com/photo-1519677100203-9f2e5c86d5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Nova York" class="destino-img">
+                    <div class="destino-content">
+                        <div class="destino-categoria">América</div>
+                        <h3>Nova York, EUA</h3>
+                        <p>A cidade que nunca dorme, cheia de energia, arte e diversidade.</p>
+                        <div class="destino-info">
+                            <span><i class="fas fa-calendar"></i> 8 dias</span>
+                            <span><i class="fas fa-user"></i> 2 pessoas</span>
+                        </div>
+                        <div class="destino-price">€ 1.450</div>
+                        <a href="contato.html" class="btn btn-accent">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <!-- Destino 4 -->
+                <div class="destino-card" data-categoria="asia">
+                    <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Tailândia" class="destino-img">
+                    <div class="destino-content">
+                        <div class="destino-categoria">Ásia</div>
+                        <h3>Tailândia</h3>
+                        <p>Descubra templos antigos, praias paradisíacas e uma cultura fascinante.</p>
+                        <div class="destino-info">
+                            <span><i class="fas fa-calendar"></i> 12 dias</span>
+                            <span><i class="fas fa-user"></i> 2 pessoas</span>
+                        </div>
+                        <div class="destino-price">€ 1.150</div>
+                        <a href="contato.html" class="btn btn-accent">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <!-- Destino 5 -->
+                <div class="destino-card" data-categoria="europa">
+                    <img src="https://images.unsplash.com/photo-1513326738677-b964603b136d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Grécia" class="destino-img">
+                    <div class="destino-content">
+                        <div class="destino-categoria">Europa</div>
+                        <h3>Grécia</h3>
+                        <p>Ilhas deslumbrantes, história milenar e a famosa culinária mediterrânea.</p>
+                        <div class="destino-info">
+                            <span><i class="fas fa-calendar"></i> 9 dias</span>
+                            <span><i class="fas fa-user"></i> 2 pessoas</span>
+                        </div>
+                        <div class="destino-price">€ 1.350</div>
+                        <a href="contato.html" class="btn btn-accent">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <!-- Destino 6 -->
+                <div class="destino-card" data-categoria="africa">
+                    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="África do Sul" class="destino-img">
+                    <div class="destino-content">
+                        <div class="destino-categoria">África</div>
+                        <h3>África do Sul</h3>
+                        <p>Safaris emocionantes, paisagens incríveis e cultura vibrante.</p>
+                        <div class="destino-info">
+                            <span><i class="fas fa-calendar"></i> 11 dias</span>
+                            <span><i class="fas fa-user"></i> 2 pessoas</span>
+                        </div>
+                        <div class="destino-price">€ 1.650</div>
+                        <a href="contato.html" class="btn btn-accent">Solicitar Orçamento</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA -->
+            <div class="cta-container">
+                <h2>Não encontrou o destino ideal?</h2>
+                <p>Entre em contato conosco e criaremos um roteiro personalizado para você!</p>
+                <a href="contato.html" class="btn btn-accent">Fale Conosco</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Viajens & Aventuras</h3>
+                    <p>Especialistas em criar experiências de viagem inesquecíveis há mais de 15 anos.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="planejamento.html">Planejamen</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua das Viagens, 123</p>
+                    <p><i class="fas fa-phone"></i> (11) 9999-8888</p>
+                    <p><i class="fas fa-envelope"></i> contato@viajensaventuras.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Viajens & Aventuras. Todos os direitos reservados.</p>
+                <p>Trabalho acadêmico para demonstração de HTML, CSS e JavaScript.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
