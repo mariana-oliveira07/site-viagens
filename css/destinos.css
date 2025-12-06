@@ -1,0 +1,381 @@
+/* ================================================= */
+/* VARIÁVEIS E ESTILOS GLOBAIS (Recomenda-se manter no style.css) */
+/* Mas repetindo aqui para referência. */
+/* ================================================= */
+
+:root {
+    --primary-color: #007bff; /* Azul primário */
+    --accent-color: #ff6f61; /* Vermelho/Coral de destaque */
+    --text-color: #333;
+    --light-bg: #f4f4f9;
+    --white: #fff;
+    --dark-bg: #2c3e50;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilo de Botões */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-accent {
+    background-color: var(--primary-color);
+}
+
+.btn-accent:hover {
+    background-color: #0056b3;
+}
+
+/* ================================================= */
+/* 1. HEADER (CABEÇALHO) - USANDO FLEXBOX */
+/* ================================================= */
+
+header {
+    background-color: var(--dark-bg);
+    color: var(--white);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    /* FLEXBOX: Alinha logo e menu horizontalmente */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.nav-menu {
+    list-style: none;
+    /* FLEXBOX: Alinha itens do menu horizontalmente */
+    display: flex; 
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--accent-color);
+}
+
+.mobile-menu-btn {
+    display: none; /* Esconder em desktop */
+}
+
+
+/* ================================================= */
+/* 2. CONTEÚDO PRINCIPAL (PÁGINA DESTINOS) */
+/* ================================================= */
+
+.pagina-interna {
+    padding: 80px 0;
+}
+
+.pagina-interna h1 {
+    font-size: 3em;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.pagina-interna .subtitle {
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ================================================= */
+/* 3. FILTROS - USANDO FLEXBOX */
+/* ================================================= */
+
+.filtros-container {
+    /* FLEXBOX: Alinha os botões de filtro horizontalmente */
+    display: flex;
+    justify-content: center; /* Centraliza os botões */
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.filtro-btn {
+    padding: 10px 20px;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+.filtro-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.filtro-btn.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+/* ================================================= */
+/* 4. GRID DE DESTINOS - USANDO GRID */
+/* ================================================= */
+
+.destinos-grid {
+    /* GRID: Organiza os cartões em colunas responsivas */
+    display: grid;
+    /* Colunas que se ajustam automaticamente, com no mínimo 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.destino-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    
+    /* FLEXBOX: Para garantir que o conteúdo preencha a altura total
+       e alinhe elementos como o botão no rodapé do card */
+    display: flex;
+    flex-direction: column; 
+    height: 100%; 
+}
+
+.destino-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.destino-img {
+    width: 100%;
+    /* Padronização de altura da imagem para manter o Grid uniforme */
+    height: 220px; 
+    object-fit: cover; 
+    display: block;
+}
+
+.destino-content {
+    padding: 20px;
+    /* FLEXBOX: Para empurrar o botão e preço para o final */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Ocupa o espaço restante */
+}
+
+.destino-categoria {
+    background-color: var(--accent-color);
+    color: var(--white);
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 3px;
+    align-self: flex-start; /* Fica alinhado à esquerda e não estica */
+    margin-bottom: 10px;
+}
+
+.destino-content h3 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.destino-content p {
+    flex-grow: 1; /* Permite que o parágrafo empurre o que vier abaixo */
+    margin-bottom: 15px;
+}
+
+.destino-info {
+    /* FLEXBOX: Alinha os ícones e textos de info horizontalmente */
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.destino-info i {
+    color: var(--accent-color);
+    margin-right: 5px;
+}
+
+.destino-price {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.destino-content .btn-accent {
+    margin-top: auto; /* Empurra o botão para a parte inferior do container flexível */
+    width: 100%; 
+    text-align: center;
+}
+
+/* ================================================= */
+/* 5. CTA (Call to Action) - USANDO FLEXBOX */
+/* ================================================= */
+
+.cta-container {
+    background-color: var(--light-bg);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    
+    /* FLEXBOX: Alinha o conteúdo verticalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.cta-container h2 {
+    color: var(--primary-color);
+    font-size: 2em;
+}
+
+/* ================================================= */
+/* 6. FOOTER (RODAPÉ) - USANDO GRID E FLEXBOX */
+/* ================================================= */
+
+footer {
+    background-color: var(--dark-bg);
+    color: #ccc;
+    padding: 50px 0 20px;
+}
+
+.footer-container {
+    /* GRID: Organiza as colunas do rodapé */
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #3a4b5d;
+}
+
+.social-links {
+    /* FLEXBOX: Alinha os ícones sociais horizontalmente */
+    display: flex; 
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* ================================================= */
+/* 7. RESPONSIVIDADE (MOBILE E TABLET) */
+/* ================================================= */
+
+@media (max-width: 900px) {
+    /* Menu Principal (Flexbox) */
+    .nav-menu {
+        /* Esconder o menu de navegação em telas menores */
+        display: none; 
+        flex-direction: column; 
+        position: absolute;
+        top: 65px; 
+        left: 0;
+        width: 100%;
+        background-color: #2c3e50;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .nav-menu a {
+        padding: 15px 20px;
+        display: block;
+        text-align: center;
+    }
+
+    .mobile-menu-btn {
+        display: block; /* Mostrar o botão do menu em telas menores */
+        background: none;
+        border: none;
+        color: var(--white);
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+    
+    /* Footer */
+    .footer-container {
+        /* Garante que o grid do footer se torne uma coluna em telas menores */
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Geral */
+    .pagina-interna h1 {
+        font-size: 2.5em;
+    }
+
+    /* Destinos Grid */
+    .destinos-grid {
+        /* Em telas muito pequenas, garante apenas 1 coluna */
+        grid-template-columns: 1fr; 
+    }
+    
+    /* Filtros */
+    .filtros-container {
+        justify-content: flex-start; /* Alinha à esquerda para melhor visualização */
+        padding: 0 10px;
+    }
+}

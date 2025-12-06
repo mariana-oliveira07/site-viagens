@@ -1,0 +1,418 @@
+/* ================================================= */
+/* VARIÁVEIS E ESTILOS GLOBAIS (Assumindo que estão no style.css) */
+/* ================================================= */
+
+:root {
+    --primary-color: #007bff; /* Azul primário */
+    --accent-color: #ff6f61; /* Vermelho/Coral de destaque */
+    --text-color: #333;
+    --light-bg: #f4f4f9;
+    --white: #fff;
+    --dark-bg: #2c3e50;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin: 60px 0 30px;
+}
+
+/* ================================================= */
+/* 1. HEADER (CABEÇALHO) - USANDO FLEXBOX */
+/* ================================================= */
+
+header {
+    background-color: var(--dark-bg);
+    color: var(--white);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    /* FLEXBOX: Alinha logo e menu horizontalmente */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.nav-menu {
+    list-style: none;
+    /* FLEXBOX: Alinha itens do menu horizontalmente */
+    display: flex; 
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--accent-color);
+}
+
+.mobile-menu-btn {
+    display: none; /* Esconder em desktop */
+}
+
+/* ================================================= */
+/* 2. CONTEÚDO PRINCIPAL (PÁGINA INTERNA) */
+/* ================================================= */
+
+.pagina-interna {
+    padding: 60px 0 80px;
+}
+
+.pagina-interna h1 {
+    font-size: 3em;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.pagina-interna .subtitle {
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ================================================= */
+/* 3. SEÇÃO SOBRE A EMPRESA - USANDO FLEXBOX */
+/* ================================================= */
+
+.sobre-container {
+    /* FLEXBOX: Organiza o conteúdo (texto) e a imagem lado a lado */
+    display: flex;
+    align-items: flex-start; /* Alinha o topo dos elementos */
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.sobre-content {
+    flex: 2; /* Ocupa 2/3 do espaço */
+    padding-right: 20px;
+}
+
+.sobre-content h2 {
+    font-size: 1.8em;
+    color: var(--dark-bg);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.sobre-content p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.sobre-imagem {
+    flex: 1; /* Ocupa 1/3 do espaço */
+    position: sticky; /* Mantém a imagem visível durante a leitura do texto */
+    top: 100px; /* Distância do topo */
+}
+
+.imagem-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.imagem-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ================================================= */
+/* 4. VALORES - USANDO GRID */
+/* ================================================= */
+
+.valores {
+    padding-bottom: 80px;
+    background-color: var(--light-bg);
+    margin: 0 -20px; /* Estende a cor de fundo até as bordas do container */
+    padding: 40px 20px;
+    border-radius: 10px;
+}
+
+.valores-grid {
+    /* GRID: Organiza os cards de valores */
+    display: grid;
+    /* 4 colunas em telas grandes */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px;
+}
+
+.valor-card {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.valor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.valor-card i {
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.valor-card h3 {
+    font-size: 1.2em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+
+/* ================================================= */
+/* 5. EQUIPE - USANDO GRID E FLEXBOX */
+/* ================================================= */
+
+.equipe {
+    padding: 80px 0;
+}
+
+.equipe-grid {
+    /* GRID: Organiza os membros da equipe */
+    display: grid;
+    /* 4 colunas em telas grandes */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.membro-equipe {
+    background-color: var(--white);
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.membro-foto img {
+    width: 100%;
+    /* Padronização da foto para alinhar o grid */
+    height: 300px; 
+    object-fit: cover;
+    display: block;
+}
+
+.membro-info {
+    padding: 20px;
+}
+
+.membro-info h3 {
+    color: var(--dark-bg);
+    margin-bottom: 5px;
+}
+
+.cargo {
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.membro-info p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.membro-contato {
+    /* FLEXBOX: Alinha os ícones de contato */
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.membro-contato a {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.membro-contato a:hover {
+    color: var(--accent-color);
+}
+
+/* ================================================= */
+/* 6. ESTATÍSTICAS - USANDO FLEXBOX (ou GRID) */
+/* ================================================= */
+
+.estatisticas {
+    padding: 40px 0 80px;
+}
+
+.estatisticas-container {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 40px 20px;
+    
+    /* GRID: Layout responsivo para os números */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    text-align: center;
+    gap: 20px;
+}
+
+.estatistica-item h3 {
+    font-size: 3em;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.estatistica-item p {
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+/* ================================================= */
+/* 7. FOOTER (RODAPÉ) - USANDO GRID E FLEXBOX */
+/* (Recomendado usar o CSS do rodapé no style.css, mas aqui está para completar) */
+/* ================================================= */
+
+footer {
+    background-color: var(--dark-bg);
+    color: #ccc;
+    padding: 50px 0 20px;
+}
+
+.footer-container {
+    /* GRID: Organiza as colunas do rodapé */
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #3a4b5d;
+}
+
+.social-links {
+    /* FLEXBOX: Alinha os ícones sociais horizontalmente */
+    display: flex; 
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.85em;
+    color: #888;
+}
+
+/* ================================================= */
+/* 8. RESPONSIVIDADE (MOBILE E TABLET) */
+/* ================================================= */
+
+@media (max-width: 900px) {
+    /* Header Responsivo (usando o padrão flexbox) */
+    .nav-menu {
+        display: none; 
+        flex-direction: column; 
+        position: absolute;
+        top: 65px; 
+        left: 0;
+        width: 100%;
+        background-color: #2c3e50;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    }
+    .mobile-menu-btn {
+        display: block; 
+    }
+    
+    /* Layout principal 'Sobre' */
+    .sobre-container {
+        /* FLEXBOX: Empilha o conteúdo e a imagem em telas menores */
+        flex-direction: column;
+    }
+
+    .sobre-content, .sobre-imagem {
+        flex: 1; /* Ocupa 100% da largura */
+        padding-right: 0;
+    }
+
+    .sobre-imagem {
+        position: static; /* Remove o 'sticky' em mobile */
+        margin-top: 30px;
+    }
+
+    /* Valores e Equipe */
+    .valores-grid,
+    .equipe-grid {
+        /* Reduz o número de colunas para melhor visualização */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    }
+    
+    /* Footer */
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Valores e Equipe (garante 1 coluna em telas muito pequenas) */
+    .valores-grid,
+    .equipe-grid,
+    .estatisticas-container {
+        grid-template-columns: 1fr; 
+    }
+
+    .estatistica-item h3 {
+        font-size: 2.5em;
+    }
+}
