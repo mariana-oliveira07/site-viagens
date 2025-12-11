@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog de Viagens - Viajens & Aventuras</title>
-        <link rel="stylesheet" href="css/style.css"> 
-        <link rel="stylesheet" href="css/blog.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Viagens - Viajens & Aventuras</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Cabeçalho com menu de navegação -->
     <header>
@@ -16,16 +19,16 @@
                 <i class="fas fa-plane"></i>
                 Viajens<span>&</span>Aventuras
             </a>
-            
+
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
-            
+
             <ul class="nav-menu" id="navMenu">
-                  <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="destinos.html">Destinos</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="planejamento.html">Planejamen</a></li>
+                <li><a href="planejamento.html">Planejamento</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
             </ul>
@@ -37,21 +40,23 @@
         <div class="container">
             <h1>Blog de Viagens</h1>
             <p class="subtitle">Dicas, histórias e inspirações para suas próximas aventuras pelo mundo</p>
-            
+
             <!-- Destaque do blog -->
             <div class="destaque-blog">
                 <div class="destaque-imagem">
-                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Viagem sustentável">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                        alt="Viagem sustentável">
                 </div>
                 <div class="destaque-conteudo">
                     <span class="destaque-categoria">Viagem Sustentável</span>
                     <h2>Como Viajar de Forma Consciente em 2024</h2>
                     <p class="destaque-data"><i class="far fa-calendar"></i> 15 de Março, 2024</p>
-                    <p>Descubra como reduzir seu impacto ambiental enquanto explora novos destinos. Dicas práticas para uma viagem mais ecológica e responsável.</p>
+                    <p>Descubra como reduzir seu impacto ambiental enquanto explora novos destinos. Dicas práticas para
+                        uma viagem mais ecológica e responsável.</p>
                     <a href="#" class="btn btn-accent">Ler Artigo Completo</a>
                 </div>
             </div>
-            
+
             <!-- Filtros de categorias -->
             <div class="categorias-blog">
                 <button class="categoria-btn active" data-categoria="todos">Todos</button>
@@ -61,99 +66,112 @@
                 <button class="categoria-btn" data-categoria="gastronomia">Gastronomia</button>
                 <button class="categoria-btn" data-categoria="aventura">Aventura</button>
             </div>
-            
+
             <!-- Grid de artigos -->
             <div class="blog-grid">
                 <!-- Artigo 1 -->
                 <article class="blog-card" data-categoria="dicas">
                     <div class="blog-imagem">
-                        <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Viagem com orçamento limitado">
+                        <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                            alt="Viagem com orçamento limitado">
                         <span class="blog-categoria">Dicas</span>
                     </div>
                     <div class="blog-conteudo">
                         <h3>10 Dicas para Viajar com Orçamento Limitado</h3>
                         <p class="blog-data"><i class="far fa-calendar"></i> 10 de Março, 2024</p>
-                        <p>Aprenda a planejar viagens incríveis sem gastar uma fortuna. Descubra segredos de economias em passagens, hospedagem e alimentação.</p>
+                        <p>Aprenda a planejar viagens incríveis sem gastar uma fortuna. Descubra segredos de economias
+                            em passagens, hospedagem e alimentação.</p>
                         <a href="#" class="blog-link">Continuar lendo <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-                
+
                 <!-- Artigo 2 -->
                 <article class="blog-card" data-categoria="destinos">
                     <div class="blog-imagem">
-                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Bali">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                            alt="Bali">
                         <span class="blog-categoria">Destinos</span>
                     </div>
                     <div class="blog-conteudo">
                         <h3>Bali Além das Praias: Descobrindo a Cultura Local</h3>
                         <p class="blog-data"><i class="far fa-calendar"></i> 5 de Março, 2024</p>
-                        <p>Vá além dos resorts e descubra os templos escondidos, cerimônias tradicionais e a rica cultura balinesa que poucos turistas conhecem.</p>
+                        <p>Vá além dos resorts e descubra os templos escondidos, cerimônias tradicionais e a rica
+                            cultura balinesa que poucos turistas conhecem.</p>
                         <a href="#" class="blog-link">Continuar lendo <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-                
+
                 <!-- Artigo 3 -->
                 <article class="blog-card" data-categoria="cultura">
                     <div class="blog-imagem">
-                        <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Festivais Japoneses">
+                        <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                            alt="Festivais Japoneses">
                         <span class="blog-categoria">Cultura</span>
                     </div>
                     <div class="blog-conteudo">
                         <h3>Festivais Tradicionais do Japão: Uma Imersão Cultural</h3>
                         <p class="blog-data"><i class="far fa-calendar"></i> 28 de Fevereiro, 2024</p>
-                        <p>Conheça os matsuri (festivais) mais autênticos do Japão e viva experiências únicas que vão muito além dos guias turísticos.</p>
+                        <p>Conheça os matsuri (festivais) mais autênticos do Japão e viva experiências únicas que vão
+                            muito além dos guias turísticos.</p>
                         <a href="#" class="blog-link">Continuar lendo <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-                
+
                 <!-- Artigo 4 -->
                 <article class="blog-card" data-categoria="gastronomia">
                     <div class="blog-imagem">
-                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Comida de rua Tailândia">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                            alt="Comida de rua Tailândia">
                         <span class="blog-categoria">Gastronomia</span>
                     </div>
                     <div class="blog-conteudo">
                         <h3>Tour Gastronômico pela Tailândia: Da Rua aos Mercados</h3>
                         <p class="blog-data"><i class="far fa-calendar"></i> 20 de Fevereiro, 2024</p>
-                        <p>Descubra os sabores autênticos da culinária tailandesa, desde os famosos pratos de rua até iguarias regionais pouco conhecidas.</p>
+                        <p>Descubra os sabores autênticos da culinária tailandesa, desde os famosos pratos de rua até
+                            iguarias regionais pouco conhecidas.</p>
                         <a href="#" class="blog-link">Continuar lendo <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-                
+
                 <!-- Artigo 5 -->
                 <article class="blog-card" data-categoria="aventura">
                     <div class="blog-imagem">
-                        <img src="https://images.unsplash.com/photo-1536152471326-642d74f4a5c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Trekking Patagônia">
+                        <img src="https://images.unsplash.com/photo-1536152471326-642d74f4a5c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                            alt="Trekking Patagônia">
                         <span class="blog-categoria">Aventura</span>
                     </div>
                     <div class="blog-conteudo">
                         <h3>Trekking na Patagônia: Roteiro para Aventureiros</h3>
                         <p class="blog-data"><i class="far fa-calendar"></i> 15 de Fevereiro, 2024</p>
-                        <p>Guia completo para explorar os cenários mais deslumbrantes da Patagônia chilena e argentina, com trilhas para todos os níveis.</p>
+                        <p>Guia completo para explorar os cenários mais deslumbrantes da Patagônia chilena e argentina,
+                            com trilhas para todos os níveis.</p>
                         <a href="#" class="blog-link">Continuar lendo <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-                
+
                 <!-- Artigo 6 -->
                 <article class="blog-card" data-categoria="dicas">
                     <div class="blog-imagem">
-                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Fotografia de viagem">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                            alt="Fotografia de viagem">
                         <span class="blog-categoria">Dicas</span>
                     </div>
                     <div class="blog-conteudo">
                         <h3>Fotografia de Viagem: Como Capturar Momentos Inesquecíveis</h3>
                         <p class="blog-data"><i class="far fa-calendar"></i> 10 de Fevereiro, 2024</p>
-                        <p>Técnicas e equipamentos essenciais para fotografar suas viagens como um profissional, mesmo com equipamento básico.</p>
+                        <p>Técnicas e equipamentos essenciais para fotografar suas viagens como um profissional, mesmo
+                            com equipamento básico.</p>
                         <a href="#" class="blog-link">Continuar lendo <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
             </div>
-            
+
             <!-- Newsletter -->
             <div class="newsletter-container">
                 <div class="newsletter-content">
                     <h2>Assine Nossa Newsletter</h2>
-                    <p>Receba em primeira mão dicas de viagem, ofertas exclusivas e inspirações para suas próximas aventuras.</p>
+                    <p>Receba em primeira mão dicas de viagem, ofertas exclusivas e inspirações para suas próximas
+                        aventuras.</p>
                     <form class="newsletter-form">
                         <input type="email" placeholder="Seu melhor e-mail" required>
                         <button type="submit" class="btn">Assinar</button>
@@ -180,12 +198,12 @@
                 <div class="footer-col">
                     <h3>Links Rápidos</h3>
                     <ul class="footer-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="destinos.html">Destinos</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="planejamento.html">Planejamen</a></li>
-                <li><a href="contato.html">Contato</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="planejamento.html">Planejamento</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -204,4 +222,5 @@
 
     <script src="js/script.js"></script>
 </body>
+
 </html>

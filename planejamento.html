@@ -7,6 +7,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/planejamento.css">
 
     <!-- Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -86,8 +87,6 @@
                                 <p>Converse com o grupo em tempo real</p>
                             </div>
                         </div>
-
-                        <button class="btn btn-accent" id="criarGrupoBtn">Criar Novo Grupo</button>
                     </div>
 
                     <div class="criar-grupo-imagem">
@@ -97,77 +96,6 @@
 
                 </div>
             </section>
-
-            <!-- Modal Criar Grupo -->
-            <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
-
-                <div class="modal-container">
-
-                    <div class="modal-header">
-                        <h2>Criar Novo Grupo de Viagem</h2>
-                        <button class="modal-close" id="modalClose" aria-label="Fechar janela">&times;</button>
-                    </div>
-
-                    <div class="modal-body">
-                        <form id="formGrupoViagem">
-
-                            <div class="form-group">
-                                <label for="nomeGrupo">Nome do Grupo *</label>
-                                <input type="text" id="nomeGrupo" placeholder="Ex: Viagem dos Formandos" required>
-                            </div>
-
-                            <div class="form-grid">
-                                <div class="form-group">
-                                    <label for="destinoGrupo">Destino</label>
-                                    <select id="destinoGrupo">
-                                        <option value="">Escolha uma opção</option>
-                                        <option value="praia">Praia</option>
-                                        <option value="montanha">Montanha</option>
-                                        <option value="cidade">Urbano</option>
-                                        <option value="aventura">Aventura</option>
-                                        <option value="cultural">Cultural</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="qtdPessoas">Quantidade de Pessoas *</label>
-                                    <input type="number" id="qtdPessoas" min="2" max="50" required>
-                                </div>
-                            </div>
-
-                            <div class="form-grid">
-                                <div class="form-group">
-                                    <label for="dataInicio">Data de Início *</label>
-                                    <input type="date" id="dataInicio" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="dataFim">Data de Término *</label>
-                                    <input type="date" id="dataFim" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="orcamentoGrupo">Orçamento Total (R$)</label>
-                                <input type="number" id="orcamentoGrupo" min="0" placeholder="Ex: 4500">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="descricaoGrupo">Descrição da Viagem</label>
-                                <textarea id="descricaoGrupo" rows="3" placeholder="Atividades, expectativas, objetivos..."></textarea>
-                            </div>
-
-                            <div class="modal-actions">
-                                <button type="button" class="btn btn-secondary" id="cancelarGrupo">Cancelar</button>
-                                <button type="submit" class="btn btn-accent">Criar Grupo</button>
-                            </div>
-
-                        </form>
-                    </div>
-
-                </div>
-
-            </div>
 
             <!-- Pacotes Personalizados -->
             <section class="pacotes-personalizados">
@@ -264,17 +192,17 @@
                     <div class="calculadora-inputs">
                         <div class="form-group">
                             <label for="totalCustos">Total dos Custos (R$) *</label>
-                            <input type="number" id="totalCustos" min="0" value="5000">
+                            <input type="number" id="totalCustos" min="0" value="">
                         </div>
 
                         <div class="form-group">
                             <label for="numPessoas">Número de Pessoas *</label>
-                            <input type="number" id="numPessoas" min="2" max="50" value="4">
+                            <input type="number" id="numPessoas" min="2" max="50" value="">
                         </div>
 
                         <div class="form-group">
                             <label for="despesasExtras">Despesas Extras por Pessoa (R$)</label>
-                            <input type="number" id="despesasExtras" min="0" value="300">
+                            <input type="number" id="despesasExtras" min="0" value="">
                             <small>Gastos pessoais opcionais</small>
                         </div>
 
@@ -345,7 +273,7 @@
                         </div>
 
                         <div class="grupo-acoes">
-                            <button class="btn btn-small">Ver Detalhes</button>
+                            <a href="#" class="btn btn-primary btn-detalhes">Ver Detalhes</a>
                         </div>
 
                     </article>
@@ -372,7 +300,7 @@
                         </div>
 
                         <div class="grupo-acoes">
-                            <button class="btn btn-small">Ver Detalhes</button>
+                            <a href="#" class="btn btn-primary btn-detalhes">Ver Detalhes</a>
                         </div>
                     </article>
 
@@ -398,7 +326,7 @@
                         </div>
 
                         <div class="grupo-acoes">
-                            <button class="btn btn-small">Ver Detalhes</button>
+                            <a href="#" class="btn btn-primary btn-detalhes">Ver Detalhes</a>
                         </div>
 
                     </article>

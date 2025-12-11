@@ -1,31 +1,203 @@
-/*
-======================================================
+/* ======================================================
 Arquivo: css/blog.css
 Regras específicas para o layout da página do Blog (blog.html)
-======================================================
-*/
-
+====================================================== */
 /* Importa as variáveis globais do style.css se necessário (opcional) */
-/* Se as variáveis :root estiverem no style.css, este bloco não é necessário */
-/*
+
 :root {
-    --primary-color: #007bff;
-    --accent-color: #ff6f61;
+    --primary-color: #007bff; /* Azul primário */
+    --accent-color: #ff6f61; /* Vermelho/Coral de destaque */
     --text-color: #333;
     --light-bg: #f4f4f9;
     --white: #fff;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --dark-bg: #2c3e50;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos de corpo e container (assumindo que o estilo global não está no blog.css) */
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilo para botões gerais (se não estiver no style.css) */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-accent {
+    background-color: var(--primary-color);
+}
+
+.btn-accent:hover {
+    background-color: #0056b3;
+}
+
+/* ================================================= */
+/* 0. HEADER (CABEÇALHO) - USANDO FLEXBOX */
+/* Este código garante que o cabeçalho funcione como nas outras páginas */
+/* ================================================= */
+
+header {
+    background-color: var(--dark-bg);
+    color: var(--white);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    /* FLEXBOX: Alinha logo e menu horizontalmente */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.nav-menu {
+    list-style: none;
+    /* FLEXBOX: Alinha itens do menu horizontalmente */
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--accent-color);
+}
+
+.mobile-menu-btn {
+    /* Oculto por padrão (Desktop) */
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+
+/* ================================================= */
+/* 5. FOOTER (RODAPÉ) - USANDO GRID E FLEXBOX */
+/* Este código garante que o rodapé funcione como nas outras páginas */
+/* ================================================= */
+
+footer {
+    background-color: var(--dark-bg);
+    color: #ccc;
+    padding: 50px 0 20px;
+}
+
+.footer-container {
+    /* GRID: Organiza as colunas do rodapé */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #3a4b5d;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.social-links {
+    /* FLEXBOX: Alinha os ícones sociais horizontalmente */
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: var(--accent-color);
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-col p i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.85em;
+    color: #888;
+}
+
+
+/* --------------------------------- */
+/* CONTEÚDO DA PÁGINA (Seu código original modificado) */
+/* --------------------------------- */
 
 .pagina-interna {
-    padding-top: 50px; /* Espaçamento do topo para o título */
+    padding-top: 50px;
     padding-bottom: 80px;
 }
 
 .pagina-interna h1 {
     font-size: 3em;
-    color: var(--primary-color, #007bff); /* Usa fallback se variável não estiver definida */
+    color: var(--primary-color, #007bff);
     text-align: center;
     margin-bottom: 5px;
 }
@@ -37,21 +209,19 @@ Regras específicas para o layout da página do Blog (blog.html)
     margin-bottom: 40px;
 }
 
-/* --------------------------------- */
 /* 1. Destaque do Blog (Flexbox) */
-/* --------------------------------- */
 .destaque-blog {
-    display: flex; /* Usa Flexbox para dispor imagem e conteúdo lado a lado */
+    display: flex;
     background-color: var(--white, #fff);
     border-radius: 10px;
-    overflow: hidden; /* Garante que a imagem respeite o border-radius */
+    overflow: hidden;
     box-shadow: var(--shadow, 0 4px 6px rgba(0, 0, 0, 0.1));
     margin-bottom: 60px;
     min-height: 400px;
 }
 
 .destaque-imagem {
-    flex: 2; /* Ocupa 2 partes do espaço */
+    flex: 2;
     position: relative;
     overflow: hidden;
 }
@@ -59,7 +229,7 @@ Regras específicas para o layout da página do Blog (blog.html)
 .destaque-imagem img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    object-fit: cover;
     transition: transform 0.4s ease;
 }
 
@@ -68,11 +238,11 @@ Regras específicas para o layout da página do Blog (blog.html)
 }
 
 .destaque-conteudo {
-    flex: 1; /* Ocupa 1 parte do espaço */
+    flex: 1;
     padding: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centraliza verticalmente o conteúdo */
+    justify-content: center;
 }
 
 .destaque-categoria {
@@ -100,12 +270,10 @@ Regras específicas para o layout da página do Blog (blog.html)
     margin-bottom: 20px;
 }
 
-/* --------------------------------- */
 /* 2. Categorias (Flexbox) */
-/* --------------------------------- */
 .categorias-blog {
-    display: flex; /* Alinha os botões horizontalmente */
-    flex-wrap: wrap; /* Quebra linha se não houver espaço */
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
     margin-bottom: 50px;
@@ -132,14 +300,11 @@ Regras específicas para o layout da página do Blog (blog.html)
     box-shadow: 0 3px 6px rgba(0, 123, 255, 0.3);
 }
 
-/* --------------------------------- */
 /* 3. Grid de Artigos (Grid) */
-/* --------------------------------- */
 .blog-grid {
-    display: grid; /* Usa Grid para criar o layout de múltiplos artigos */
-    /* Cria 3 colunas de tamanho igual */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 30px; /* Espaço entre os cartões */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
     margin-bottom: 80px;
 }
 
@@ -208,7 +373,7 @@ Regras específicas para o layout da página do Blog (blog.html)
     color: var(--primary-color, #007bff);
     text-decoration: none;
     font-weight: bold;
-    display: inline-flex; /* Usa Flexbox para alinhar texto e ícone */
+    display: inline-flex;
     align-items: center;
     gap: 5px;
     margin-top: 10px;
@@ -219,9 +384,7 @@ Regras específicas para o layout da página do Blog (blog.html)
     color: var(--accent-color, #ff6f61);
 }
 
-/* --------------------------------- */
 /* 4. Newsletter (Flexbox) */
-/* --------------------------------- */
 .newsletter-container {
     background: linear-gradient(135deg, var(--primary-color, #007bff), #0056b3);
     color: var(--white, #fff);
@@ -242,7 +405,7 @@ Regras específicas para o layout da página do Blog (blog.html)
 }
 
 .newsletter-form {
-    display: flex; /* Alinha input e botão horizontalmente */
+    display: flex;
     justify-content: center;
     gap: 10px;
     max-width: 600px;
@@ -250,7 +413,7 @@ Regras específicas para o layout da página do Blog (blog.html)
 }
 
 .newsletter-form input[type="email"] {
-    flex-grow: 1; /* Permite que o input preencha o espaço */
+    flex-grow: 1;
     padding: 12px 15px;
     border: none;
     border-radius: 5px;
@@ -258,61 +421,90 @@ Regras específicas para o layout da página do Blog (blog.html)
 }
 
 .newsletter-form .btn {
-    /* O estilo padrão do .btn (se estiver no style.css) será usado, mas podemos sobrescrever cores específicas aqui */
     background-color: var(--accent-color, #ff6f61);
     color: var(--white, #fff);
     font-weight: bold;
 }
 
 .newsletter-form .btn:hover {
-    background-color: #e55c50; 
+    background-color: #e55c50;
 }
 
 
 /* --------------------------------- */
-/* 5. Responsividade */
+/* 6. Responsividade (MOBILE) */
 /* --------------------------------- */
+
 @media (max-width: 992px) {
-    /* Tablet e Telas menores */
-    .destaque-blog {
-        /* Muda o Flexbox para empilhar verticalmente */
-        flex-direction: column; 
-        min-height: auto;
-    }
-    
-    .destaque-imagem {
-        height: 300px; /* Altura fixa para imagem no tablet */
+
+    /* CABEÇALHO MOBILE */
+    .nav-menu {
+        /* Esconde o menu de navegação padrão */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background-color: var(--dark-bg);
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+        padding: 10px 0;
     }
 
-    .blog-grid {
-        /* Em telas menores, o auto-fit já ajustará para 2 ou 1 coluna automaticamente
-           graças ao minmax(300px, 1fr) */
+    .nav-menu li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .mobile-menu-btn {
+        /* Exibe o botão de menu sanduíche */
+        display: block;
+    }
+
+    /* Conteúdo Principal */
+    .destaque-blog {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .destaque-imagem {
+        height: 300px;
+    }
+
+    /* RODAPÉ MOBILE */
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
     }
 }
 
 @media (max-width: 600px) {
+
     /* Smartphone */
     .destaque-conteudo {
         padding: 20px;
     }
-    
+
     .destaque-conteudo h2 {
         font-size: 1.5em;
     }
-    
+
     .newsletter-form {
-        /* Empilha input e botão para melhor visualização em telas pequenas */
         flex-direction: column;
     }
-    
+
+    .newsletter-form input[type="email"],
     .newsletter-form .btn {
-        width: 100%; /* Botão preenche a largura total */
+        width: 100%;
     }
 }
 
-/* Garantia de que a grid fique em uma coluna no menor dispositivo */
 @media (max-width: 450px) {
     .blog-grid {
-        grid-template-columns: 1fr; /* Força 1 coluna */
+        grid-template-columns: 1fr;
     }
 }

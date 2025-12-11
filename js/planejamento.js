@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const despesasExtras = parseFloat(document.getElementById('despesasExtras')?.value) || 0;
         
         if (numPessoas < 1) {
-             // Não é necessário um 'alert' aqui, mas podemos garantir que o valor mínimo seja 1
+            // Não é necessário um 'alert' aqui, mas podemos garantir que o valor mínimo seja 1
             if(document.getElementById('numPessoas')) document.getElementById('numPessoas').value = 1;
             return;
         }
@@ -246,6 +246,38 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     //=====================================
+    // 7. BOTÃO 'VER DETALHES' (SIMULAÇÃO)
+    //=====================================
+
+    /**
+     * Lógica para os botões "Ver Detalhes" dos cards de grupo.
+     * Estes botões geralmente possuem a classe .btn-detalhes.
+     */
+    function initVerDetalhesBtn() {
+        // Altere '.btn-detalhes' para a classe correta do seu botão, se for diferente.
+        document.querySelectorAll('.btn-detalhes, .btn.btn-primary').forEach(button => {
+            
+            // Vamos usar o texto do título do card para identificar o grupo
+            const card = button.closest('.card');
+            let titulo = 'Este Grupo de Viagem';
+            if (card) {
+                const tituloElement = card.querySelector('h2, h3, h4'); 
+                titulo = tituloElement ? tituloElement.textContent.trim() : titulo;
+            }
+
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Simulação: Aqui você faria o redirecionamento ou abriria um modal de detalhes
+                alert(`Redirecionando para a página de detalhes do grupo: "${titulo}".\n\n(Simulação: Em um projeto real, você usaria o ID do grupo para carregar as informações completas)`);
+                
+                // Exemplo de redirecionamento real (comentar ou remover em produção se for usar um modal):
+                // window.location.href = `/detalhes-grupo?nome=${encodeURIComponent(titulo)}`;
+            });
+        });
+    }
+
+
+    //=====================================
     // INICIALIZAÇÃO GERAL
     //=====================================
 
@@ -254,7 +286,19 @@ document.addEventListener('DOMContentLoaded', function() {
     initFormGrupoViagem();
     initPacoteButtons();
     initCalculadoraCustos();
+    // 🎯 NOVO: Inicializa o listener do botão "Ver Detalhes"
+    initVerDetalhesBtn(); 
     
     // Executar animação após um breve carregamento
     setTimeout(animarBarrasProgresso, 500); 
 });
+
+// --- CÓDIGO DA CALCULADORA (SEGUNDO BLOCO) ---
+
+// Certifique-se de que as funções formatar e gerarRelatorio estão acessíveis ou dentro do primeiro bloco.
+// Para fins de correção, vamos remover o segundo bloco para evitar a redefinição de 'calcularCustos', 
+// mantendo apenas a implementação que está dentro de 'initCalculadoraCustos' no bloco principal. 
+// A única função necessária que estava fora do escopo principal é 'formatar' (que já existe como 'formatarMoeda').
+// O código abaixo será ignorado/removido para evitar conflitos no seu arquivo final.
+
+// document.getElementById("calcularCustos").addEventListener("click", function () { ...
