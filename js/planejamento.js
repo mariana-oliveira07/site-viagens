@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    //=====================================
+    //======================================
     // 1. FUNÇÕES DE UTILIDADE (HELPER FUNCTIONS)
     //=====================================
 

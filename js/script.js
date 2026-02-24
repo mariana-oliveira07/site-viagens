@@ -1,6 +1,6 @@
 //=====================================
 // VARIÁVEIS GLOBAIS
-//=====================================
+//======================================
 let currentSlide = 0;
 let slideInterval;
 const AUTO_SLIDE_TIME = 5000; // Tempo em milissegundos
